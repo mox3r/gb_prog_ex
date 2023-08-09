@@ -33,6 +33,9 @@ public class Main {
                 output.println();
                 output.println("<h1>Шалом, православные!</h1>");
                 output.flush();
+
+                input.close();
+                output.close();
             }
         } catch (Exception e) {
             e.printStackTrace();
