@@ -6,7 +6,7 @@ public class Kata
     {
         List<int> list = new List<int>();
         int j = integer;
-        for (int i = 0; j <= limit; i++)
+        while(j <= limit)
         {
           list.Add(j);
           j+= integer;
