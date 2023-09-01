@@ -10,15 +10,16 @@ import random
 def coin():
     n = int(input('Введите число монеток: '))
     counter = 0
-
     lst = [random.randint(0, 1) for i in range(n)]
+
     print(lst[:])
+
     for i in range(len(lst)):
         if (lst[i] == 1):
             counter += 1
 
-    if (counter >= n/2):
-        return n-counter
+    if (counter >= n / 2):
+        return n - counter
     else:
         return counter
 
