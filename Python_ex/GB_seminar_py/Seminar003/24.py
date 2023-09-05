@@ -9,8 +9,10 @@
 # собирает ягоды с этого куста и с двух соседних с ним.
 # Напишите программу для нахождения максимального числа ягод,
 # которое может собрать за один заход собирающий модуль, находясь перед некоторым кустом заданной во входном файле грядки.
+import os
+from random import randint
 
-import random
+os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def bush_berry_counter(bushBerry_list):
@@ -27,7 +29,7 @@ def bush_berry_counter(bushBerry_list):
 maxBerry = int(input('Введите количество ягод на кусте: '))
 bushCount = int(input('Введите колличество кустов: '))
 
-bush_berries = [random.randint(0, maxBerry) for i in range(bushCount)]
+bush_berries = [randint(0, maxBerry) for i in range(bushCount)]
 
 print(bush_berries)
 print('Максимальное число ягод за один заход:',
