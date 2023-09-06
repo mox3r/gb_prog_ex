@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example.noobie_lessons</groupId>
-    <artifactId>java_for_noobs</artifactId>
+    <artifactId>noob</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
