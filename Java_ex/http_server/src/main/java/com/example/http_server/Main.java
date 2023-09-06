@@ -1,4 +1,4 @@
-package com.example.geekbrains;
+package com.example.http_server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
