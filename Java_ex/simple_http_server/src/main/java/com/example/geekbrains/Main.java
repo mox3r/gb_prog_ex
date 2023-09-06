@@ -1,4 +1,4 @@
-package ru.geekbrains;
+package com.example.geekbrains;
 
 import java.io.BufferedReader;
 import java.io.IOException;
