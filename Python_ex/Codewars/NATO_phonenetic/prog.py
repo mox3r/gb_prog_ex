@@ -25,6 +25,10 @@ my_dict = {
     'X': 'Xray',
     'Y': 'Yankee',
     'Z': 'Zulu',
+    ',': 'Comma',
+    '.': 'Dot',
+    ' ': 'Space'
+    
 }
 
 
