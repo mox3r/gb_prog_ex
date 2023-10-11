@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Seminar_3</title>
+</head>
+
+<body>
+    <script>
+        // alert('Шалом, юзверь!');
+        // alert(`158 + 2 = ${158+2}`);
+        //const firstName = 'Scott';
+        //alert(`Привет, ${firstName}!`);
+        //const text = prompt('Кто ты?', 'Имя');
+        //alert(`Шалом, ${text}`);
+
+        /* const name = 'mox3r';
+        function showName() {
+
+            const text = prompt('Кто ты?', 'Имя');
+            if (text == name) {
+                let msg = 'Приветствую, ' + name;
+                alert(msg);
+            }
+            else {
+                let msg = 'Привет, ' + text;
+                alert(msg);
+            }
+            
+        }
+        showName(); */
+
+        /* if(confirm('Уверен?')){
+            alert('Чудненько!');
+        } else {
+            alert('А зря...')
+        }*/
+        const hintName = 'Введи имя сюда!';
+        const requestName = 'Стой, кто идёт!';
+        let name = prompt(requestName, hintName);
+
+        function whoAreYou(name) {
+            const ownerName = 'mox3r';
+
+            if (name == ownerName) {
+                alert('Привествую, Хозяин!');
+            } else if (name == hintName) {
+                alert('Что ты творишь?!');
+            } else {
+                alert(`Добро пожаловать, ${name}`);
+            }
+        }
+        whoAreYou(name);
+    </script>
+</body>
+
+</html>
