@@ -1,0 +1,61 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        ArrayList<String> list = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите ФИО, возраст, пол (через запятую):");
+        System.out.println("Для выхода введите 'exit'");
+
+        while (true) {
+            String sTmp = scanner.nextLine();
+            if (sTmp.equalsIgnoreCase("exit")) {
+                break;
+            }
+            list.add(sTmp);
+        }
+        // вывод: Фамилия, инициталы
+        list.forEach(n -> {
+            String[] str = n.split(", ");
+            String[] str1 = str[0].split(" ");
+            System.out.printf("%s %s.%s.\n",
+                    str1[0], str1[1].charAt(0), str1[2].charAt(0));
+        });
+
+        System.out.println("-".repeat(30));
+
+        // Сортировка по возрасту
+        list.sort((n1, n2) -> {
+            int a = Integer.parseInt(n1.split(", ")[1]);
+            int b = Integer.parseInt(n2.split(", ")[1]);
+            return a - b;
+        });
+
+        // вывод: Фамилия, инициталы, возраст
+        list.forEach(n -> {
+            String[] str = n.split(", ");
+            String[] str1 = str[0].split(" ");
+            System.out.printf("%s %s.%s. %s\n",
+                    str1[0], str1[1].charAt(0), str1[2].charAt(0), str[1]);
+        });
+
+        System.out.println("-".repeat(30));
+
+        // Сортировка по полу
+        ArrayList<String> listTmp = new ArrayList<>(list);
+        listTmp.removeIf(n -> n.split(", ")[2].toLowerCase().charAt(0)=='м');
+        list.removeAll(listTmp);
+        list.addAll(listTmp);
+        // вывод: Фамилия, инициталы, возраст, пол
+        list.forEach(n -> {
+            String[] str = n.split(", ");
+            String[] str1 = str[0].split(" ");
+            System.out.printf("%s %s.%s. %s %s\n",
+                    str1[0], str1[1].charAt(0), str1[2].charAt(0), str[1], str[2]);
+        });
+
+        scanner.close();
+
+    }
+}
