@@ -27,11 +27,22 @@ public class Program {
 
         BottleOfMilk milk4 = new BottleOfMilk("ОАО ГМЗ №1", "Славянские традиции 3", 299, 2.0, 1.5);
 
+        PackageOfTea tea1 = new PackageOfTea("Princess", "Нури", 120, "Черный", 25);
+        PackageOfTea tea2 = new PackageOfTea("Princess", "Ява", 170, "Зеленый", 50);
+        PackageOfTea tea3 = new PackageOfTea("Princess", "Жасмин", 140, "Бергамот", 25);
+        PackageOfTea tea4 = new PackageOfTea("Princess", "Роза", 200, "Каркаде", 100);
+        PackageOfTea tea5 = new PackageOfTea("Princess", "Цинь", 250, "Улун", 100);
+
         ArrayList<Product> products = new ArrayList<>();
         products.add(milk1);
         products.add(milk2);
         products.add(milk3);
         products.add(milk4);
+        products.add(tea1);
+        products.add(tea2);
+        products.add(tea3);
+        products.add(tea4);
+        products.add(tea5);
 
         VendingMachine vendingMachine = new VendingMachine(products);
         BottleOfMilk bottleOfMilk = vendingMachine.getBottleOfMilk("Славянские традиции 2", 1.0);
@@ -42,5 +53,12 @@ public class Program {
             System.out.println(bottleOfMilk.displayInfo());
         }
 
+        PackageOfTea packageOfTea = vendingMachine.getPackageOfTea("Жасмин", "Бергамот", 25);
+        if (packageOfTea == null) {
+            System.out.println("Такого чая нет");
+        } else {
+            System.out.println("Вы купили: ");
+            System.out.println(packageOfTea.displayInfo());
+        }
     }
 }
