@@ -1,7 +1,7 @@
 public abstract class Checker {
-    protected void PlateChecker(int value) {
-        if (value <= 0) {
-            System.out.println("Impossible!");
+    protected void PlateChecker(int food) {
+        if (food <= 0) {
+            System.out.println("Plate is empty! Please, fill it!");
         }
     }
 }

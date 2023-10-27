@@ -1,4 +1,4 @@
-public class Plate {
+public class Plate extends Checker {
     private int food;
 
     public void setFood(int food) {
@@ -15,8 +15,6 @@ public class Plate {
 
     public void info() {
         System.out.printf("Plate: %d", food);
-        if (food <= 0) {
-            System.out.println("Plate is empty!");
-        }
+        PlateChecker(food);
     }
 }
