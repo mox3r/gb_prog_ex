@@ -21,12 +21,13 @@ public class Box<T extends Fruit> {
         fruits.add(fruit);
     }
 
-    public void transfer(Box<T> toBox, int quantity){
-        if (fruits.size() < quantity) System.out.println("Это сделать нельзя.");
-        else 
-        for (int i = 0; i < quantity; i++) {
-            toBox.add(fruits.get(fruits.size()-1));
-            fruits.remove(fruits.size() - 1);
-        }
+    public void transfer(Box<T> toBox, int quantity) {
+        if (fruits.size() < quantity)
+            System.out.println("Это сделать нельзя.");
+        else
+            for (int i = 0; i < quantity; i++) {
+                toBox.add(fruits.get(fruits.size() - 1));
+                fruits.remove(fruits.size() - 1);
+            }
     }
 }
