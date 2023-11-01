@@ -8,15 +8,15 @@ from random import randint
 os.system('cls' if os.name == 'nt' else 'clear')
 
 size = int(input('Введите длину массива: '))
-minValue = int(input('Введите минимальное значение диапозона: '))
-maxValue = int(input('Введите максимальное значение диапозона: '))
+minValue = int(input('Введите минимальное значение диапазона: '))
+maxValue = int(input('Введите максимальное значение диапазона: '))
 
 rand_list = []
 
 for i in range(size):
     rand_list.append(randint(-1000, 1000))
     
-print(f'Список случайных значений [-1000; 1000], диапозон поиска [{minValue}; {maxValue}]')
+print(f'Список случайных значений [-1000; 1000], диапазон поиска [{minValue}; {maxValue}]')
 
 for item in rand_list:
     if item >= minValue and item <= maxValue:

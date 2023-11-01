@@ -27,7 +27,7 @@ def bush_berry_counter(bushBerry_list):
 
 
 maxBerry = int(input('Введите количество ягод на кусте: '))
-bushCount = int(input('Введите колличество кустов: '))
+bushCount = int(input('Введите количество кустов: '))
 
 bush_berries = [randint(0, maxBerry) for i in range(bushCount)]
 

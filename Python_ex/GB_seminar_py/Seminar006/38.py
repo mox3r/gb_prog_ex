@@ -104,27 +104,27 @@ while True:
     print('1 - Вывести справочник\n' + '2 - Создать новую запись\n' +
           '3 - Поиск\n' + '4 - Сортировка\n' + '5 - Изменение записи\n' +
           '6 - Удаление записи\n' + 'q - Выйти из программы. ')
-    choise = input('Выберите действие: ').lower()
+    choice = input('Выберите действие: ').lower()
 
-    if choise == '1':
+    if choice == '1':
         guide_reader(f_name)
         input('Нажмите ВВОД чтобы продолжить')
-    elif choise == '2':
+    elif choice == '2':
         guide_writer(f_name)
         input('Нажмите ВВОД чтобы продолжить')
-    elif choise == '3':
+    elif choice == '3':
         guide_finder(f_name)
         input('Нажмите ВВОД чтобы продолжить')
-    elif choise == '4':
+    elif choice == '4':
         guide_sort_by(f_name)
         input('Нажмите ВВОД чтобы продолжить')
-    elif choise == '5':
+    elif choice == '5':
         guide_replacer(guide_writer, f_name, temp_name)
         input('Нажмите ВВОД чтобы продолжить')
-    elif choise == '6':
+    elif choice == '6':
         guide_remover(f_name, temp_name)
         input('Нажмите ВВОД чтобы продолжить')
-    elif choise == 'q':
+    elif choice == 'q':
         break
     else:
         print('Я ваще хз что ты хочешь')

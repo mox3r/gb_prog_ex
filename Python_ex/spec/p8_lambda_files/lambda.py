@@ -15,11 +15,10 @@ from random import randint
 
 #map:
 # def select(f,col):
-    # return [f(x) for x in col]
+# return [f(x) for x in col]
 # filter:
 # def where(f, col):
 #     return [x for x in col if f(x)]
-
 
 data = [1, 5, 3, 3, 4, 4, 16, 22, 12, 45, 65, 76, 99, 12, 22, 44]
 res = list(map(int, data))
@@ -31,7 +30,6 @@ print(res)
 
 res = list(filter(lambda x: x % 10 == 5, data))
 print(res)
-
 
 # list1 = [x for x in range(1,20)]
 # print(list1)

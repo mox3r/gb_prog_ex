@@ -10,7 +10,6 @@ file_path = Path('info', 'data.txt')
 with open(file_path, 'w', encoding='UTF-8') as data:
     data.write('ВАСЯ\n')
     data.write('Андрей\n')
-    
 
 with open(file_path, 'r', encoding='utf8') as data:
     for line in data:
