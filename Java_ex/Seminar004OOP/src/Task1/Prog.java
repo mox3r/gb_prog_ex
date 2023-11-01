@@ -5,7 +5,7 @@ public class Prog {
         var per1 = new Person("Fio #1", "10000024523");
         var ent1 = new Entity("Entity #1", "1000243654");
 
-        var credAcc1 = new CreditAccout<Person>(per1, 1000);
+        var credAcc1 = new CreditAccount<Person>(per1, 1000);
         var debAcc1 = new DebitAccount<Entity>(ent1, 10000000);
 
         var transaction = new Transaction<>(debAcc1, credAcc1, 50000);
