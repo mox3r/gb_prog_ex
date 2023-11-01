@@ -2,19 +2,19 @@ package HW_004OOP;
 
 public class Prog {
     public static void main(String[] args) {
-        Apple apple1 = new Apple(1);
-        Apple apple2 = new Apple(1);
-        Apple apple3 = new Apple(1);
-        Apple apple4 = new Apple(1);
-        Apple apple5 = new Apple(1);
-        Apple apple6 = new Apple(1);
-        Apple apple7 = new Apple(1);
-        Apple apple8 = new Apple(1);
+        Apple apple1 = new Apple();
+        Apple apple2 = new Apple();
+        Apple apple3 = new Apple();
+        Apple apple4 = new Apple();
+        Apple apple5 = new Apple();
+        Apple apple6 = new Apple();
+        Apple apple7 = new Apple();
+        Apple apple8 = new Apple();
 
-        Orange orange1 = new Orange(1);
-        Orange orange2 = new Orange(1);
-        Orange orange3 = new Orange(1);
-        Orange orange4 = new Orange(1);
+        Orange orange1 = new Orange();
+        Orange orange2 = new Orange();
+        Orange orange3 = new Orange();
+        Orange orange4 = new Orange();
 
         // тут пока не разобрался как убрать обращение к параметру, конструктор
         // ругается.
