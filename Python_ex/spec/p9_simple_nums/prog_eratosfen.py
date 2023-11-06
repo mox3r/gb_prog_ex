@@ -7,7 +7,7 @@ a = list(range(n + 1))
 counter = 0
 
 isPrint = False
-isBar = False
+isBar = True
 
 startTime = time()
 lst = []
