@@ -16,6 +16,10 @@ public class BookingPresenter implements ViewObserver {
         view.showTables(model.loadTables());
     }
 
+    public void updateBookingUI() {
+        view.showBookingOrders(model.loadTables());
+    }
+
     @Override
     public void onReservationTable(Date orderDate, int tableNo, String name) {
         System.out.println("Презентер реагирует!");

@@ -41,7 +41,7 @@ public class TableModel implements Model {
         for (Table table : loadTables()) {
             for (Reservation reservation : table.getReservations()) {
                 if (reservation.getId() == oldReservation) {
-                    // table.getReservations().remove(reservation);
+                    table.getReservations().remove(reservation);
                     System.out.println("Резерв прекращен.");
                     return reservationTable(reservationDate, tableNo, name);
                 } 

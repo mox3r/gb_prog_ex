@@ -17,5 +17,7 @@ public class App {
         bookingView.reservationTable(new Date(), 1, "Andrew");
         bookingView.changeReservationTable(1001, new Date(), 3, "Andrew");
         bookingView.changeReservationTable(1019, new Date(), 3, "Andrew");
+
+        bookingPresenter.updateBookingUI();
     }
 }

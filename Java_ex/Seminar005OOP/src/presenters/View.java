@@ -8,4 +8,5 @@ public interface View {
     void showTables(Collection<Table> tables);
     void registerObserver(ViewObserver observer);
     void showReservationTableResult(int reservationNo);
+    void showBookingOrders(Collection<Table> tables);
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+import models.Reservation;
 import models.Table;
 import presenters.View;
 import presenters.ViewObserver;
@@ -37,7 +38,6 @@ public class BookingView implements View {
 
     }
 
-    
     public void reservationTable(Date orderDate, int tableNo, String name) {
         System.out.println("Событие регистрации возбуждается!");
         System.out.println("Происходит рассылка...");
@@ -46,7 +46,7 @@ public class BookingView implements View {
         }
     }
 
-    public void changeReservationTable(int oldReservation, Date orderDate, int tableNo, String name){
+    public void changeReservationTable(int oldReservation, Date orderDate, int tableNo, String name) {
         System.out.println("Событие изменения возбуждается!");
         System.out.println("Происходит рассылка...");
         for (ViewObserver observer : observers) {
@@ -54,5 +54,15 @@ public class BookingView implements View {
         }
     }
 
+    @Override
+    public void showBookingOrders(Collection<Table> tables) {
+        for (Table table : tables) {
+            for (Reservation reservation : table.getReservations()) {
+                System.out.printf("Бронирование №%d, столик №%d, имя: %s\n", reservation.getId(), table.getNo(),
+                reservation.getName());
+            }
+        }
+        System.out.println("*".repeat(30));
+    }
 
 }
