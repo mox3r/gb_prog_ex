@@ -1,11 +1,13 @@
 package observer;
 
-public class Worker implements Observer {
-
+public class Worker extends Employee {
+    private String surName;
     private String name;
     private int salary = 20000;
 
-    public Worker(String name) {
+    public Worker(String surName, String name) {
+        super(surName, name);
+        this.surName = surName;
         this.name = name;
     }
 
@@ -15,22 +17,22 @@ public class Worker implements Observer {
         switch (jobType) {
             case Cleaner:
                 if (this.salary <= salary) {
-                    System.out.printf("Рабочий %s: Мне нужна эта работа! (компания: %s; з/п: %d)\n",
-                            name, companyName, salary);
+                    System.out.printf("Рабочий %s %s: Мне нужна эта работа! (компания: %s; з/п: %d)\n",
+                            surName, name, companyName, salary);
                     this.salary = salary;
                 } else {
-                    System.out.printf("Рабочий %s: Поищу ещё. (компания: %s; з/п: %d)\n",
-                            name, companyName, salary);
+                    System.out.printf("Рабочий %s %s: Поищу ещё. (компания: %s; з/п: %d)\n",
+                            surName, name, companyName, salary);
                 }
                 break;
             case Security:
                 if (this.salary <= salary) {
-                    System.out.printf("Рабочий %s: Мне нужна эта работа! (компания: %s; з/п: %d)\n",
-                            name, companyName, salary);
+                    System.out.printf("Рабочий %s %s: Мне нужна эта работа! (компания: %s; з/п: %d)\n",
+                            surName, name, companyName, salary);
                     this.salary = salary;
                 } else {
-                    System.out.printf("Рабочий %s: Поищу ещё. (компания: %s; з/п: %d)\n",
-                            name, companyName, salary);
+                    System.out.printf("Рабочий %s %s: Поищу ещё. (компания: %s; з/п: %d)\n",
+                            surName, name, companyName, salary);
                 }
                 break;
             default:

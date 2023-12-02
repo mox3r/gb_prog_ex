@@ -1,10 +1,13 @@
 package observer;
 
-public class Master implements Observer {
+public class Master extends Employee {
     private String name;
+    private String surName;
     private int salary = 80000;
 
-    public Master(String name) {
+    public Master(String surName, String name) {
+        super(surName, name);
+        this.surName = surName;
         this.name = name;
     }
 
@@ -14,32 +17,32 @@ public class Master implements Observer {
         switch (jobType) {
             case Middle:
                 if (this.salary <= salary) {
-                    System.out.printf("Специалист %s: Мне нужна эта работа! (компания: %s; з/п: %d)\n",
-                            name, companyName, salary);
+                    System.out.printf("Специалист %s %s: Мне нужна эта работа! (компания: %s; з/п: %d)\n",
+                            surName, name, companyName, salary);
                     this.salary = salary;
                 } else {
-                    System.out.printf("Специалист %s: Поищу ещё. (компания: %s; з/п: %d)\n",
-                            name, companyName, salary);
+                    System.out.printf("Специалист %s %s: Поищу ещё. (компания: %s; з/п: %d)\n",
+                            surName, name, companyName, salary);
                 }
                 break;
             case Senior:
                 if (this.salary <= salary) {
-                    System.out.printf("Специалист %s: Мне нужна эта работа! (компания: %s; з/п: %d)\n",
-                            name, companyName, salary);
+                    System.out.printf("Специалист %s %s: Мне нужна эта работа! (компания: %s; з/п: %d)\n",
+                            surName, name, companyName, salary);
                     this.salary = salary;
                 } else {
-                    System.out.printf("Специалист %s: Поищу ещё. (компания: %s; з/п: %d)\n",
-                            name, companyName, salary);
+                    System.out.printf("Специалист %s %s: Поищу ещё. (компания: %s; з/п: %d)\n",
+                            surName, name, companyName, salary);
                 }
                 break;
             case TeamLead:
                 if (this.salary <= salary) {
-                    System.out.printf("Специалист %s: Мне нужна эта работа! (компания: %s; з/п: %d)\n",
-                            name, companyName, salary);
+                    System.out.printf("Специалист %s %s: Мне нужна эта работа! (компания: %s; з/п: %d)\n",
+                            surName, name, companyName, salary);
                     this.salary = salary;
                 } else {
-                    System.out.printf("Специалист %s: Поищу ещё. (компания: %s; з/п: %d)\n",
-                            name, companyName, salary);
+                    System.out.printf("Специалист %s %s: Поищу ещё. (компания: %s; з/п: %d)\n",
+                            surName, name, companyName, salary);
                 }
                 break;
             default:

@@ -19,7 +19,7 @@ public class JobAgency implements Publisher {
     @Override
     public void sendOffer(String companyName, EmployeeType employeeType, JobType jobType, int salary) {
         for (Observer observer : observers) {
-            if (observer.getClass().getName().equals( "observer." + employeeType.toString()))
+            if (observer.getClass().getName().equals("observer." + employeeType.toString()))
                 observer.receiveOffer(companyName, jobType, salary);
         }
     }
