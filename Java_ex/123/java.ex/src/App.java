@@ -36,6 +36,7 @@ public class App {
                 counter++;
             }
         }
+        writer.flush();
         writer.close();
         System.out.printf("\nПростых чисел в числе %d: %d", number, counter);
     }
