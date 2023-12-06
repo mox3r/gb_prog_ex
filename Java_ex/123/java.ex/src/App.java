@@ -1,7 +1,21 @@
+import java.io.FileWriter;
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
+        System.out.println("Программа поиска количества простых чисел в заданном числе. Числа запишет в файл.");
+
+        String fname = "result.txt";
         int counter = 0;
-        for (int i = 1; i < 100000000; i++) {
+        int number;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Введите число для подсчета простых чисел в нем: ");
+        number = sc.nextInt();
+        sc.close();
+
+        FileWriter writer = new FileWriter(fname, false);
+        for (int i = 2; i < number; i++) {
             boolean isPrime = true;
             if (i > 10) {
                 if (i % 2 == 0 || i % 10 == 5) {
@@ -18,10 +32,11 @@ public class App {
                 }
             }
             if (isPrime) {
-                // System.out.print(i + " ");
+                writer.write(i + "\t");
                 counter++;
             }
         }
-        System.out.print(counter);
+        writer.close();
+        System.out.printf("\nПростых чисел в числе %d: %d", number, counter);
     }
 }
