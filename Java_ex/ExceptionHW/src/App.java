@@ -17,9 +17,9 @@ public class App {
 
         System.out.print("\033[H\033[2J");
         System.out.println("Программа записывает данные в файл \"фамилия\"");
-
         System.out.println(
                 "Введите данные формата: ФИО, дата рождения(dd.mm.yyyy), номер телефона(7xxxxxxxxxx), пол (m/f): ");
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in, "cp866"));
         String s = br.readLine();
 
@@ -42,13 +42,12 @@ public class App {
             int y = Integer.parseInt(date_check[2]);
             if (d < 1 || d > 31 || m < 1 || m > 12 || y < 1900 || y > 2023) {
                 throw new IllegalArgumentException("Ошибка в дате, проверьте ещё раз.");
-            } 
+            }
 
             try {
                 isDigits = str[4].matches(regex);
             } catch (NumberFormatException e) {
                 System.out.println(e.getMessage());
-
                 isDigits = false;
             }
 
