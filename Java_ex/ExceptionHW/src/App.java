@@ -36,17 +36,26 @@ public class App {
                 isValidDate = false;
             }
 
+            String[] date_check = str[3].split("\\.");
+            int d = Integer.parseInt(date_check[0]);
+            int m = Integer.parseInt(date_check[1]);
+            int y = Integer.parseInt(date_check[2]);
+            if (d < 1 || d > 31 || m < 1 || m > 12 || y < 1900 || y > 2023) {
+                throw new IllegalArgumentException("Ошибка в дате, проверьте ещё раз.");
+            } 
+
             try {
                 isDigits = str[4].matches(regex);
             } catch (NumberFormatException e) {
-                System.out.println("Неверный формат номера телефона.");
+                System.out.println(e.getMessage());
+
                 isDigits = false;
             }
 
             if (str[5].toLowerCase().equals("m") || str[5].toLowerCase().equals("f")) {
                 isSex = true;
             } else {
-                System.out.println("Пол указан неверно! Попробуйте f или m.");
+                throw new IllegalArgumentException("Пол указан неверно! Попробуйте f или m.");
             }
 
             if (isValidDate && isDigits && isSex) {
@@ -68,7 +77,7 @@ public class App {
             }
 
         } else {
-            System.out.println("Неверный формат ввода данных");
+            throw new IllegalArgumentException("Неверный формат ввода данных");
         }
     }
 }
