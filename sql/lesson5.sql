@@ -45,5 +45,13 @@ SELECT salary,
     ) AS percent_total_sum
 FROM staff WINDOW w AS (PARTITION BY post),
     w1 AS ();
-
-    
+CREATE OR REPLACE VIEW v_count_post AS
+SELECT post,
+    COUNT(*) AS count_staff,
+    AVG(salary) AS avg_staff
+FROM staff
+GROUP BY post
+ORDER BY avg_staff DESC;
+SELECT *
+FROM v_count_post;
+SHOW FULL TABLES;
