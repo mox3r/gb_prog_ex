@@ -1,4 +1,4 @@
-from time import time
+import datetime
 from alive_progress import alive_bar
 
 n = int(input("n = "))
@@ -7,9 +7,9 @@ a = list(range(n + 1))
 counter = 0
 
 isPrint = False
-isBar = True
+isBar = False
 
-startTime = time()
+start_timer = datetime.datetime.now()
 lst = []
 a[1] = 0
 
@@ -33,8 +33,7 @@ elif not isBar:
         for j in range(i, n + 1, i):
             a[j] = 0
         i += 1
-    
 
 if isPrint: print(lst)
 print(f"Количество простых чисел: {counter}")
-print('Execution time %3.2fs' % (time() - startTime))
+print(f'Execution time {str(datetime.datetime.now() - start_timer)}')

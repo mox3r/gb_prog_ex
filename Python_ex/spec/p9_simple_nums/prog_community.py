@@ -1,11 +1,11 @@
-from time import time
+import datetime
 
 isPrint = False
 
 n = int(input("n = "))
 
 counter = 1
-startTime = time()
+startTime = datetime.datetime.now()
 
 lst = [2]
 for i in range(3, n + 1, 2):
@@ -23,4 +23,4 @@ for i in range(3, n + 1, 2):
         counter += 1
 if isPrint: print(lst)
 print(f"Количество простых чисел: {counter}")
-print('Execution time %3.2fs' % (time() - startTime))
+print('Execution time %3.2fs' % (datetime.datetime.now() - startTime))

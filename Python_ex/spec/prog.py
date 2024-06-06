@@ -1,14 +1,14 @@
 import random
 import string
 # import os
-import time
+import datetime
 
 print("Random monkey tries to enter your word")
 res = ""
 word = input("Input word: ")
 counter = 0
 
-timerStart = time.time()
+timerStart = datetime.datetime.now()
 
 while res != word:
     res = ''.join(random.choices(string.ascii_lowercase, k=len(word)))
@@ -17,8 +17,8 @@ while res != word:
     #     print(f"Count: {counter}, sequence {res}")
     #     os.system('clear')
 
-timerEnd = time.time()
+timerEnd = datetime.datetime.now()
 
 print(
-    f"Total tries: {counter}. LF word: \"{res}\" Execution time {(timerEnd - timerStart)*10**3:.03f} ms"
+    f"Total tries: {counter}. LF word: \"{res}\" Execution time {str(timerEnd - timerStart)} ms"
 )
