@@ -17,8 +17,6 @@ while res != word:
     #     print(f"Count: {counter}, sequence {res}")
     #     os.system('clear')
 
-timerEnd = datetime.datetime.now()
-
 print(
-    f"Total tries: {counter}. LF word: \"{res}\" Execution time {str(timerEnd - timerStart)} ms"
+    f"Total tries: {counter}. LF word: \"{res}\" Execution time: {str(datetime.datetime.now() - timerStart)} ms"
 )
