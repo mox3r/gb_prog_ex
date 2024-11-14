@@ -41,7 +41,7 @@ public abstract class Animal {
 
     public void swim(int distance) {
         if (distance <= maxRun) {
-            System.out.printf("%s пробежал проплыл %d м.\n", name, distance);
+            System.out.printf("%s проплыл %d м.\n", name, distance);
         } else {
             System.out.printf("%s не смог проплыть дистатцию %d м., остановился на %d\n", name, distance, maxRun);
         }

@@ -7,7 +7,8 @@ DROP TABLE IF EXISTS student;
 -- создание таблиц с автоиндексом
 CREATE TABLE IF NOT EXISTS student (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    first_name VARCHAR(45)
+    first_name VARCHAR(45),
+    contact int
 );
 -- Очистка строк без журналирования
 TRUNCATE student;
@@ -26,8 +27,13 @@ VALUES ('Alex'),
 -- SELECT first_name FROM student WHERE id = 2;
 SELECT *
 FROM student
-WHERE first_name LIKE '%a';
+WHERE first_name LIKE '%A';
 SELECT *
 FROM student
 WHERE id > 2
     AND id < 6;
+SELECT CONCAT(
+  MOD(TIME_FORMAT(SEC_TO_TIME(id), '%H'), 24), 'hours:',
+  FLOOR(MOD(id,3600)/60), 'minutes:',
+  MOD(id,60), 'seconds'
+) AS Result
