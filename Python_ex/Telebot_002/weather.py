@@ -13,12 +13,6 @@ async def start_command(message: types.message):
     await message.reply(
         "Привет! Напиши мне название города и я пришлю сводку погоды")
 
-
-@dp.message_handler()
-async def get_weather(message: types.Message):
-    pass
-
-
 @dp.message_handler()
 async def get_weather(message: types.Message):
     try:
