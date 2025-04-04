@@ -1,6 +1,5 @@
 import random
 import string
-# import os
 import datetime
 
 print("Random monkey tries to enter your word")
@@ -14,8 +13,7 @@ while res != word:
     res = ''.join(random.choices(string.ascii_lowercase, k=len(word)))
     counter += 1
     # if counter % 100000 == 0:
-    #     print(f"Count: {counter}, sequence {res}")
-    #     os.system('clear')
+    #     print(f"Count: {counter}, sequence {res}", end='\r')
 
 print(
     f"Total tries: {counter}. LF word: \"{res}\" Execution time: {str(datetime.datetime.now() - timerStart)} ms"
