@@ -1,9 +1,9 @@
 import datetime
-from alive_progress import alive_bar
 
 n = int(input("n = "))
 a = list(range(n + 1))
 
+print(f'List created')
 counter = 0
 
 isPrint = False
@@ -21,7 +21,6 @@ while i <= n:
     for j in range(i, n + 1, i):
         a[j] = 0
     i += 1
-    if isBar: bar()
 
 if isPrint: print(lst)
 

@@ -23,4 +23,4 @@ for i in range(3, n + 1, 2):
         counter += 1
 if isPrint: print(lst)
 print(f"Количество простых чисел: {counter}")
-print('Execution time %3.2fs' % (datetime.datetime.now() - startTime))
+print(f'Execution time {datetime.datetime.now() - startTime}')
