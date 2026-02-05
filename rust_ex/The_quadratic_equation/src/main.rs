@@ -2,15 +2,18 @@ use std::io;
 
 fn main() {
     loop {
-        println!("МЕНЮ:\n1. Решение квадратных уравнений;\nq. Выход");
+        let menu_list = vec!["МЕНЮ:", "1. Решение квадратных уравнений;", "q. Выход."];
 
+        for i in menu_list {
+            println!("{}", i);
+        }
+
+        println!("Сделайте выбор:");
         let mut choice_str = String::new();
-
         match io::stdin().read_line(&mut choice_str) {
             Ok(_) => {}
             Err(e) => println!("Ошибка ввода {}", e),
         }
-
         let choice_str_match = choice_str.trim();
 
         match choice_str_match {
@@ -98,17 +101,17 @@ fn main() {
                 let x2 = (-b - d.sqrt()) / (2.0 * a);
 
                 println!(
-                    "Решено, корни уравнения:\nD = {}\nx1 = {:.4}\nx2 = {:.4}",
+                    "D = {}\nРешено, корни уравнения:\nx1 = {:.4}\nx2 = {:.4}",
                     d, x1, x2
                 );
             }
             if d == 0.0 {
                 let x1 = -b / (2.0 * a);
 
-                println!("Решено, корень уравнения:\nD = {}\nx = {:.4}", d, x1);
+                println!("D = {}\nРешено, корень уравнения:\nx = {:.4}", d, x1);
             }
             if d < 0.0 {
-                println!("Уравнение не имеет решения, D = {}", d);
+                println!("D = {}\nУравнение не имеет решения.", d);
             }
         }
     }
