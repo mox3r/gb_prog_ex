@@ -10,7 +10,7 @@ counter = 0
 timerStart = datetime.datetime.now()
 
 while res != word:
-    res = ''.join(random.choices(string.ascii_lowercase, k=len(word)))
+    res = ''.join(random.choices(string.ascii_letters, k=len(word)))
     counter += 1
     # if counter % 100000 == 0:
     #     print(f"Count: {counter}, sequence {res}", end='\r')
