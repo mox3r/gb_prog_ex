@@ -1,3 +1,6 @@
+from math import sqrt
+
+
 def remove_the_exclamation_mark(s: str) -> str:
     '''
     :param s: tested word    
@@ -9,9 +12,6 @@ def remove_the_exclamation_mark(s: str) -> str:
     return s[:-1] if s.endswith('!') else s
 
 
-print(remove_the_exclamation_mark('Preved Medved!!'))
-
-
 def test_remove_the_exclamation_mark():
     assert remove_the_exclamation_mark(
         "Hello!") == "Hello", "Should be 'Hello'"
@@ -19,9 +19,10 @@ def test_remove_the_exclamation_mark():
 
 
 test_remove_the_exclamation_mark()
+print(remove_the_exclamation_mark('Preved Medved!!'))
 
 arr = [0, 2765, 356, 44567, 54, 5, 7, 56, 8, 5985]
-arr[0]
+
 print([arr[i] for i in range(1, len(arr)) if arr[i] % i == 0])
 
 a = 0
@@ -55,9 +56,16 @@ def how_much_i_love_you(nb_petals: int) -> str:
             return "passionately"
         case 5:
             return "madly"
-        case 6:
+        case _:
             return "not at all"
 
+
+def test_how_much_i_love_you():
+    assert how_much_i_love_you(6) == "not at all", "Should be 'not at all'"
+    print("\033[32m'How much I love you' Test PASSED\033[0m")
+
+
+test_how_much_i_love_you()
 
 print(how_much_i_love_you(4564567))
 
@@ -81,22 +89,29 @@ def initials(name: str) -> str:
     return f"{'.'.join([s[0] for s in name.strip().split(' ')]).upper()}."
 
 
+def test_initials():
+    assert initials("Sam warden") == "S.W.", "Should be 'S.W.'"
+    print("\033[32m'Initials' Test PASSED\033[0m")
+
+
+test_initials()
 print(initials('Andrew i Mikhnavets'))
 
 
 def fake_bin(x):
-
-    # li = []
-
-    # for i in range(len(x)):
-    #     if x[i] >= '2' and x[i] < '5':
-    #         li.append('0')
-    #     elif x[i] >= '5':
-    #         li.append('1')
-    #     else:
-    #         li.append(x[i])
     print(''.join('0' if i < '5' else '1' for i in x))
     # TODO: ЗАПОМНИ МЛЕАДЬ!!!!!!!
 
 
 fake_bin('24365455678')
+print(['kt', 'kt', 'kt', 'kt', 'kt', 'kt', 'fd'].count('kt'))
+
+
+def square_or_square_root(arr):
+    # return [pow(i, 2) if pow(sqrt(i), 2) != i else i**0.5 for i in arr]
+    return [int(sqrt(a)) if sqrt(a) % 1 == 0 else a**2 for a in arr]
+
+
+print(square_or_square_root([1, 2, 3, 4, 5, 6, 7, 8]))
+
+print("jj".replace('.', '-'))
